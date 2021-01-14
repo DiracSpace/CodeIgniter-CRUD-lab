@@ -72,5 +72,68 @@ public function operacionescrud()
 }
 ```
 
+## Configuración de la base de datos
+
+Tomando en cuenta que existe una instalación de MySQL o MariaDB (la que usé yo), haremos la creación de una base de datos llamada `crud` con un usuario llamado `operaciones`.
+
+```bash
+$ sudo mysql -u root -p
+[sudo] password for diracspace: 
+
+MariaDB [(none)]> create database crud;
+Query OK, 1 row affected (0.001 sec)
+
+MariaDB [(none)]> create user 'operaciones'@'localhost' identified by 'prueba';
+Query OK, 0 rows affected (0.019 sec)
+
+MariaDB [(none)]> grant all privileges on crud . * to 'operaciones'@'localhost';
+Query OK, 0 rows affected (0.068 sec)
+
+MariaDB [(none)]> flush privileges;
+Query OK, 0 rows affected (0.001 sec)
+
+MariaDB [(none)]> exit;
+Bye
+```
+Después de esto, debemos entrar como nuestro nuevo usuario y crear la tabla `usuarios`. Además, hacemos unas inserciones.
+
+```
+$ mysql -u operaciones -p
+Enter password: 
+
+MariaDB [(none)]> use crud;
+MariaDB [crud]> create table usuarios (
+    -> id int auto_increment primary key,
+    -> nombre varchar(255) not null,
+    -> email varchar(255) not null
+    -> ) engine=innodb;
+Query OK, 0 rows affected (0.089 sec)
+
+MariaDB [crud]> show tables;
++----------------+
+| Tables_in_crud |
++----------------+
+| usuarios       |
++----------------+
+1 row in set (0.001 sec)
+
+insert into usuarios(nombre, email) values("Jayson De León", "jayson@gmail.com");
+insert into usuarios(nombre, email) values("Kevin De León", "kevin@gmail.com");
+insert into usuarios(nombre, email) values("José Hernández", "jos@gmail.com");
+insert into usuarios(nombre, email) values("Mario Estéban", "mario@gmail.com");
+```
+Ahora, dentro de nuestro archivo `Database.php` ubicado en `app/Config/`, agregaremos las modificaciones a nuestro array de valores.
+
+```
+public $default = [
+		...
+		'hostname' => 'localhost',
+		'username' => 'operaciones',
+		'password' => 'prueba',
+		'database' => 'crud',
+        ...
+];
+```
+
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
