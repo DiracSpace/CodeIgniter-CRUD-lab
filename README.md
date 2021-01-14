@@ -131,7 +131,7 @@ public $default = [
 		'username' => 'operaciones',
 		'password' => 'prueba',
 		'database' => 'crud',
-        ...
+        	...
 ];
 ```
 
