@@ -1,0 +1,227 @@
+CRITICAL - 2021-01-16 22:58:29 --> Invalid file: usuarios.php
+#0 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/View/View.php(228): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+#1 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/Common.php(1119): CodeIgniter\View\View->render()
+#2 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/app/Controllers/Operations.php(14): view()
+#3 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Operations->index()
+#4 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#5 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#6 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/home/diracspac...')
+#8 {main}
+CRITICAL - 2021-01-16 23:00:08 --> Call to a member function view() on null
+#0 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Operations->index()
+#1 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#2 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#3 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/home/diracspac...')
+#5 {main}
+CRITICAL - 2021-01-16 23:00:09 --> Call to a member function view() on null
+#0 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Operations->index()
+#1 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#2 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#3 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/home/diracspac...')
+#5 {main}
+CRITICAL - 2021-01-16 23:00:09 --> Call to a member function view() on null
+#0 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Operations->index()
+#1 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#2 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#3 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/home/diracspac...')
+#5 {main}
+CRITICAL - 2021-01-16 23:00:15 --> Call to a member function view() on null
+#0 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Operations->index()
+#1 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#2 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#3 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/home/diracspac...')
+#5 {main}
+CRITICAL - 2021-01-16 23:00:19 --> Call to a member function view() on null
+#0 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Operations->index()
+#1 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#2 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#3 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/home/diracspac...')
+#5 {main}
+CRITICAL - 2021-01-16 23:00:55 --> Call to undefined function App\Controllers\operacionescrud()
+#0 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Operations->index()
+#1 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#2 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#3 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/home/diracspac...')
+#5 {main}
+CRITICAL - 2021-01-16 23:01:12 --> Call to a member function view() on null
+#0 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Operations->operacionescrud()
+#1 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#2 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#3 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/home/diracspac...')
+#5 {main}
+CRITICAL - 2021-01-16 23:16:57 --> Argument 2 passed to view() must be of the type array, string given, called in /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/app/Controllers/Operations.php on line 14
+#0 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/app/Controllers/Operations.php(14): view()
+#1 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Operations->index()
+#2 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/home/diracspac...')
+#6 {main}
+CRITICAL - 2021-01-16 23:17:27 --> Call to undefined function App\Controllers\read()
+#0 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Operations->index()
+#1 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#2 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#3 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/home/diracspac...')
+#5 {main}
+CRITICAL - 2021-01-16 23:17:28 --> Call to undefined function App\Controllers\read()
+#0 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Operations->index()
+#1 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#2 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#3 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/home/diracspac...')
+#5 {main}
+CRITICAL - 2021-01-16 23:17:38 --> Call to undefined function App\Controllers\read()
+#0 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Operations->index()
+#1 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#2 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#3 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/home/diracspac...')
+#5 {main}
+CRITICAL - 2021-01-16 23:23:07 --> Invalid file: usuarios.php
+#0 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/View/View.php(228): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+#1 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/Common.php(1119): CodeIgniter\View\View->render()
+#2 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/app/Controllers/Operations.php(12): view()
+#3 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Operations->index()
+#4 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#5 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#6 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/home/diracspac...')
+#8 {main}
+CRITICAL - 2021-01-16 23:23:11 --> Invalid file: usuarios.php
+#0 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/View/View.php(228): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+#1 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/Common.php(1119): CodeIgniter\View\View->render()
+#2 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/app/Controllers/Operations.php(12): view()
+#3 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Operations->index()
+#4 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#5 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#6 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/home/diracspac...')
+#8 {main}
+CRITICAL - 2021-01-16 23:23:21 --> Invalid file: Usuarios.php
+#0 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/View/View.php(228): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+#1 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/Common.php(1119): CodeIgniter\View\View->render()
+#2 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/app/Controllers/Operations.php(12): view()
+#3 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Operations->index()
+#4 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#5 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#6 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/home/diracspac...')
+#8 {main}
+CRITICAL - 2021-01-16 23:23:27 --> Invalid file: Usuarios.php
+#0 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/View/View.php(228): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+#1 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/Common.php(1119): CodeIgniter\View\View->render()
+#2 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/app/Controllers/Operations.php(12): view()
+#3 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Operations->index()
+#4 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#5 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#6 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/home/diracspac...')
+#8 {main}
+CRITICAL - 2021-01-16 23:23:59 --> Call to a member function render() on null
+#0 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Operations->index()
+#1 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#2 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#3 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/home/diracspac...')
+#5 {main}
+CRITICAL - 2021-01-16 23:24:00 --> Call to a member function render() on null
+#0 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Operations->index()
+#1 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#2 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#3 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/home/diracspac...')
+#5 {main}
+CRITICAL - 2021-01-16 23:24:27 --> Call to a member function render() on null
+#0 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Operations->index()
+#1 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#2 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#3 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/home/diracspac...')
+#5 {main}
+CRITICAL - 2021-01-16 23:24:28 --> Call to a member function render() on null
+#0 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Operations->index()
+#1 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#2 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#3 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/home/diracspac...')
+#5 {main}
+CRITICAL - 2021-01-16 23:25:18 --> Call to a member function render() on null
+#0 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Operations->index()
+#1 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#2 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#3 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/home/diracspac...')
+#5 {main}
+CRITICAL - 2021-01-16 23:25:42 --> Call to a member function render() on null
+#0 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Operations->index()
+#1 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#2 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#3 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/home/diracspac...')
+#5 {main}
+CRITICAL - 2021-01-16 23:25:57 --> Invalid file: crudsite.php
+#0 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/View/View.php(228): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+#1 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/Common.php(1119): CodeIgniter\View\View->render()
+#2 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/app/Controllers/Operations.php(12): view()
+#3 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Operations->index()
+#4 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#5 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#6 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/home/diracspac...')
+#8 {main}
+CRITICAL - 2021-01-16 23:41:02 --> Call to undefined function App\Controllers\read()
+#0 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Operations->index()
+#1 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#2 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#3 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/home/diracspac...')
+#5 {main}
+CRITICAL - 2021-01-16 23:45:40 --> syntax error, unexpected '}', expecting ';'
+#0 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/Router/Router.php(195): CodeIgniter\Router\Router->autoRoute()
+#1 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(793): CodeIgniter\Router\Router->handle()
+#2 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(364): CodeIgniter\CodeIgniter->tryToRouteIt()
+#3 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/home/diracspac...')
+#6 {main}
+CRITICAL - 2021-01-16 23:45:58 --> syntax error, unexpected '}', expecting ';'
+#0 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/Router/Router.php(195): CodeIgniter\Router\Router->autoRoute()
+#1 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(793): CodeIgniter\Router\Router->handle()
+#2 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(364): CodeIgniter\CodeIgniter->tryToRouteIt()
+#3 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/home/diracspac...')
+#6 {main}
+CRITICAL - 2021-01-16 23:46:00 --> syntax error, unexpected '}', expecting ';'
+#0 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/Router/Router.php(195): CodeIgniter\Router\Router->autoRoute()
+#1 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(793): CodeIgniter\Router\Router->handle()
+#2 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(364): CodeIgniter\CodeIgniter->tryToRouteIt()
+#3 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/home/diracspac...')
+#6 {main}
+CRITICAL - 2021-01-16 23:46:13 --> syntax error, unexpected '}', expecting ';'
+#0 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/Router/Router.php(195): CodeIgniter\Router\Router->autoRoute()
+#1 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(793): CodeIgniter\Router\Router->handle()
+#2 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(364): CodeIgniter\CodeIgniter->tryToRouteIt()
+#3 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/home/diracspac...')
+#6 {main}
+CRITICAL - 2021-01-16 23:46:14 --> syntax error, unexpected '}', expecting ';'
+#0 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/Router/Router.php(195): CodeIgniter\Router\Router->autoRoute()
+#1 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(793): CodeIgniter\Router\Router->handle()
+#2 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(364): CodeIgniter\CodeIgniter->tryToRouteIt()
+#3 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /home/diracspace/Documents/git/CodeIgniter-CRUD-lab/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/home/diracspac...')
+#6 {main}

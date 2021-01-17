@@ -1,16 +1,65 @@
-<?php namespace App\Controllers;
+<?php 
+namespace App\Controllers;
 
 use CodeIgniter\Controller;
+use App\Models\Usuarios;
 
 class Operations extends Controller
 {
+    // GET all users
     public function index()
     {
-        echo 'Hola Mundo desde función';
+        $userModel = new Usuarios();
+        $data['usuarios'] = $userModel -> orderBy('id') -> findAll();
+        // $allusers = json_encode(array_values($data));
+        return view('CrudSite', $data);
     }
 
-    public function operacionescrud()
+    // new user form 
+    public function register()
     {
-        echo view('operations');
+        return view('Create');
+    }
+
+    // POST new user
+    public function create()
+    {
+        $userModel = new Usuarios();
+        $data = [
+            'nombre' => $this -> request -> getVar('nombre'),
+            'email' => $this -> request -> getVar('email'),
+        ];
+        $userModel -> insert($data);
+        echo "inserted";
+        return $this -> response -> redirect(site_url('operations'));
+    }
+
+    // GET single user for editing
+    public function singleUser($id = null)
+    {
+        $userModel = new Usuarios();
+        $data['user_obj'] = $userModel -> where('id', $id) -> first();
+        return view('Edit', $data);
+    }
+
+    // PUT new user data
+    public function update()
+    {
+        $userModel = new Usuarios();
+        $id = $this -> request -> getVar('id');
+        $data = [
+            'nombre' => $this -> request -> getVar('nombre'),
+            'email' => $this -> request -> getVar('email'),
+        ];
+        $userModel -> update($id, $data);
+        return $this -> response -> redirect(site_url('operations'));
+    }
+
+    // DELETE user
+    public function delete($id = null)
+    {
+        $userModel = new Usuarios();
+        $data['usuario'] = $userModel -> where('id', $id) -> delete($id);
+        return $this -> response -> redirect(site_url('operations'));
     }
 }
