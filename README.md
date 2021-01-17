@@ -17,15 +17,17 @@ $ composer create-project codeigniter4/appstarter [nombre-proyecto]
 
 Luego nos metemos a la carpeta `[nombre-proyecto]`, y corremos el mini server de PHP con el comando `php spark serve` o si tienes `XAMPP` entonces genera el proyecto dentro de la carpeta `public`. Nos debería salir la página inicial así
 
- - startpage.png
+<p align="center">
+  <img src="lab-evidence/startpage.png" />
+</p>
 
 ## Editando la ruta Home
 
 Ahora, debemos crear un Controller. Es básicamente una clase que permite delegar el trabajo y mostrar sitios web en la url. Imaginemos que tenemos la siguiente ruta de nuestro dominio: 
 
-`http://127.0.0.1:8080/mensajes/holamundo`
+`http://127.0.0.1:8080/mensaje/holamundo`
 
-Podemos imaginarnos que hay un controller llamado "mensajes". El método invocado cuando pedimos mensajes sería "holamundo". Este método tiene como trabajo mostrar o desplegar un saludo en el HTML.
+Podemos imaginarnos que hay un controller llamado "mensaje". El método invocado cuando pedimos mensajes sería "holamundo". Este método tiene como trabajo mostrar o desplegar un saludo en el HTML.
 
 Lo que nosotros haremos es crear un archivo `Operations.php` en la ruta `app/Controllers/`. Ahora, creamos el siguiente código
 
@@ -34,7 +36,7 @@ Lo que nosotros haremos es crear un archivo `Operations.php` en la ruta `app/Con
 
 use CodeIgniter\Controller;
 
-class Mensaje extends Controller
+class Operations extends Controller
 {
     public function index()
     {
@@ -44,11 +46,13 @@ class Mensaje extends Controller
 ```
 Podemos ver que dirigiéndonos a la ruta `http://localhost:8080/operations` nos saldrá lo siguiente
 
-- helloworldfunction.png
+<p align="center">
+  <img src="lab-evidence/helloworldfunction.png" />
+</p>
 
-Y es que básicamente es la función padre de nuestro url, aquí podemos ahora redirigir a otro sitio html.
+Y es que básicamente es la función padre de nuestro url, aquí podemos ahora redirigir a otro sitio html o tener otras funciones que nos permitirán trabajar como un API que después nos permitirá renderizar en un solo `View`.
 
-Ahora, podemos crear un archivo llamado `operations.php` dentro de nuestra carpeta `app/Views/`. Aquí podemos definir carpetas y adentro más sitios estáticos que pueden renderizar información. Por mientras solo creamos el sitio y pegamos lo siguiente.
+Por el moemnto, podemos crear un archivo llamado `Operations.php` dentro de nuestra carpeta `app/Views/`. Aquí podemos definir carpetas y adentro más sitios estáticos que pueden renderizar información. Por mientras solo creamos el archivo y pegamos lo siguiente.
 
 ```html
 <!DOCTYPE html>
@@ -63,12 +67,21 @@ Ahora, podemos crear un archivo llamado `operations.php` dentro de nuestra carpe
 </body>
 </html>
 ```
-Después, nos regresamos a nuestro Controller y agregamos una función llamada `operations`.
+
+## Creación del Modelo
+
+El modelo se utiliza para definir el esquema que es un arquetipo de valores de tabla. Entonces, tenemos que manifestar un nuevo archivo `Usuarios.php` en la carpeta `app/Models`. Inserte el siguiente código dentro del mismo archivo para establecer el modelo de usuario.
 
 ```php
-public function operacionescrud()
+<?php 
+namespace App\Models;
+use CodeIgniter\Model;
+
+class Usuarios extends Model
 {
-    echo view('operations');
+    protected $table = 'usuarios';
+    protected $primaryKey = 'id';    
+    protected $allowedFields = ['nombre', 'email'];
 }
 ```
 
@@ -131,9 +144,88 @@ public $default = [
 		'username' => 'operaciones',
 		'password' => 'prueba',
 		'database' => 'crud',
-        ...
+        	...
 ];
 ```
+
+## Operaciones CRUD (Create Read Update Delete)
+
+Lo que haremos ahora es crear nuestras operaciones dentro del archivo que creamos `Operations.php`. Lo primero que haremos es editar nuestra función `index()`, ya que la usaremos para poder leer todos los registros de la tabla creada en el paso anterior cada vez que entremos.
+
+```php
+// GET all users
+public function index()
+{
+    $userModel = new Usuarios();
+    $data['usuarios'] = $userModel -> orderBy('id') -> findAll();
+    return view('CrudSite', $data);
+}
+
+// new user form 
+public function register()
+{
+    return view('Create');
+}
+
+// POST new user
+public function create()
+{
+    $userModel = new Usuarios();
+    $data = [
+        'nombre' => $this -> request -> getVar('nombre'),
+        'email' => $this -> request -> getVar('email'),
+    ];
+    $userModel -> insert($data);
+    return $this -> response -> redirect(site_url('/CrudSite'));
+}
+
+// GET single user for editing
+public function singleUser($id = null)
+{
+    $userModel = new Usuarios();
+    $data['user_obj'] = $userModel -> where('id', $id) -> first();
+    return view('Edit', $data);
+}
+
+// PUT new user data
+public function update()
+{
+    $userModel = new Usuarios();
+    $id = $this -> request -> getVar('id');
+    $data = [
+        'nombre' => $this -> request -> getVar('nombre'),
+        'email' => $this -> request -> getVar('email'),
+    ];
+    $userModel -> update($id, $data);
+    return $this -> response -> redirect(site_url('/CrudSite'));
+}
+
+// DELETE user
+public function delete($id = null)
+{
+    $userModel = new Usuarios();
+    $data['usuario'] = $userModel -> where('id', $id) -> delete($id);
+    return $this -> response -> redirect(site_url('/CrudSite'));
+}
+```
+
+## Definiendo rutas
+
+Ahora, tenemos que definir una serie de rutas que nos permitirán alojar funciones en cierta url. Pondremos lo siguiente en el archivo `app/Config/Routes.php`.
+
+```php
+
+// CRUD operation routing
+
+$routes -> get('users', 'Operations::index');
+$routes -> get('register', 'Operations::register');
+$routes -> post('create', 'Operations::create');
+$routes -> get('edit/(:num)', 'Operations::singleUser/$1');
+$routes -> post('update', 'Operations::update');
+$routes -> get('delete/(:num)', 'Operations::delete/$1');
+```
+## Crear un nuevo usuario
+
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
