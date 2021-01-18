@@ -50,14 +50,15 @@ class Operations extends Controller
             'email' => $this -> request -> getVar('email'),
         ];
         $userModel -> update($id, $data);
-        return $this -> response -> redirect(site_url('/users'));
+        return redirect() -> to(base_url('/operations'));
     }
 
     // DELETE user
-    public function delete($id = null)
+    public function delete()
     {
         $userModel = new Usuarios();
-        $data['usuario'] = $userModel -> where('id', $id) -> delete($id);
-        return $this -> response -> redirect(site_url('/users'));
+        $id = $this -> request -> getVar('id');
+        $userModel -> where('id', $id) -> delete($id);
+        return redirect() -> to(base_url('/operations'));
     }
 }

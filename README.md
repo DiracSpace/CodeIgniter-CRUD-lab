@@ -52,7 +52,7 @@ Podemos ver que dirigiéndonos a la ruta `http://localhost:8080/operations` nos 
 
 Y es que básicamente es la función padre de nuestro url, aquí podemos ahora redirigir a otro sitio html o tener otras funciones que nos permitirán trabajar como un API que después nos permitirá renderizar en un solo `View`.
 
-Por el moemnto, podemos crear un archivo llamado `Operations.php` dentro de nuestra carpeta `app/Views/`. Aquí podemos definir carpetas y adentro más sitios estáticos que pueden renderizar información. Por mientras solo creamos el archivo y pegamos lo siguiente.
+Por el momento, podemos crear un archivo llamado `CrudSite.php` dentro de nuestra carpeta `app/Views/`. Aquí podemos definir carpetas y adentro más sitios estáticos que pueden renderizar información. Por mientras solo creamos el archivo y pegamos lo siguiente.
 
 ```html
 <!DOCTYPE html>
@@ -67,6 +67,23 @@ Por el moemnto, podemos crear un archivo llamado `Operations.php` dentro de nues
 </body>
 </html>
 ```
+
+Ahora, tenemos que redirigir la petición a ese archivo. En la función anterior agregaremos lo siguiente.
+
+```php
+<?php namespace App\Controllers;
+
+use CodeIgniter\Controller;
+
+class Operations extends Controller
+{
+    public function index()
+    {
+        return view('CrudSite');
+    }
+}
+```
+Esto tomará la petición, y retornará el archivo que hemos creado donde tendrá nuestro diseño `HTML`.
 
 ## Creación del Modelo
 
@@ -150,62 +167,71 @@ public $default = [
 
 ## Operaciones CRUD (Create Read Update Delete)
 
+Primero, debemos importar nuestra clase `Usuarios`, para así poder empezar a hacer peticiones a la base de datos. Pondremos lo siguiente al inicio del código en `Operations.php`.
+
+```php
+use App\Models\Usuarios;
+```
+
 Lo que haremos ahora es crear nuestras operaciones dentro del archivo que creamos `Operations.php`. Lo primero que haremos es editar nuestra función `index()`, ya que la usaremos para poder leer todos los registros de la tabla creada en el paso anterior cada vez que entremos.
 
 ```php
-// GET all users
-public function index()
+class Operations extends Controller
 {
-    $userModel = new Usuarios();
-    $data['usuarios'] = $userModel -> orderBy('id') -> findAll();
-    return view('CrudSite', $data);
-}
+    // GET all users
+    public function index()
+    {
+        $userModel = new Usuarios();
+        $data['usuarios'] = $userModel -> orderBy('id') -> findAll();
+        return view('CrudSite', $data);
+    }
 
-// new user form 
-public function register()
-{
-    return view('Create');
-}
+    // new user form 
+    public function register()
+    {
+        return view('Create');
+    }
 
-// POST new user
-public function create()
-{
-    $userModel = new Usuarios();
-    $data = [
-        'nombre' => $this -> request -> getVar('nombre'),
-        'email' => $this -> request -> getVar('email'),
-    ];
-    $userModel -> insert($data);
-    return $this -> response -> redirect(site_url('/CrudSite'));
-}
+    // POST new user
+    public function create()
+    {
+        $userModel = new Usuarios();
+        $data = [
+            'nombre' => $this -> request -> getVar('nombre'),
+            'email' => $this -> request -> getVar('email'),
+        ];
+        $userModel -> insert($data);
+        return redirect() -> to(base_url('/operations'));
+    }
 
-// GET single user for editing
-public function singleUser($id = null)
-{
-    $userModel = new Usuarios();
-    $data['user_obj'] = $userModel -> where('id', $id) -> first();
-    return view('Edit', $data);
-}
+    // GET single user for editing
+    public function singleUser($id = null)
+    {
+        $userModel = new Usuarios();
+        $data['user_obj'] = $userModel -> where('id', $id) -> first();
+        return view('Edit', $data);
+    }
 
-// PUT new user data
-public function update()
-{
-    $userModel = new Usuarios();
-    $id = $this -> request -> getVar('id');
-    $data = [
-        'nombre' => $this -> request -> getVar('nombre'),
-        'email' => $this -> request -> getVar('email'),
-    ];
-    $userModel -> update($id, $data);
-    return $this -> response -> redirect(site_url('/CrudSite'));
-}
+    // PUT new user data
+    public function update()
+    {
+        $userModel = new Usuarios();
+        $id = $this -> request -> getVar('id');
+        $data = [
+            'nombre' => $this -> request -> getVar('nombre'),
+            'email' => $this -> request -> getVar('email'),
+        ];
+        $userModel -> update($id, $data);
+        return $this -> response -> redirect(site_url('/users'));
+    }
 
-// DELETE user
-public function delete($id = null)
-{
-    $userModel = new Usuarios();
-    $data['usuario'] = $userModel -> where('id', $id) -> delete($id);
-    return $this -> response -> redirect(site_url('/CrudSite'));
+    // DELETE user
+    public function delete($id = null)
+    {
+        $userModel = new Usuarios();
+        $data['usuario'] = $userModel -> where('id', $id) -> delete($id);
+        return $this -> response -> redirect(site_url('/users'));
+    }
 }
 ```
 
