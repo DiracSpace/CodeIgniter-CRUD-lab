@@ -2,10 +2,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create new user</title>
+    <title>Edit user</title>
 </head>
 <body>
-    <p>Create Form</p>
+    <p>Edit Form</p>
     <form method="post" action="/update">
         <div class="form-group">
             <label>ID</label>
