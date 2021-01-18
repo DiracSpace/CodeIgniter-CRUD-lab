@@ -8,5 +8,3 @@ class Usuarios extends Model
     protected $primaryKey = 'id';    
     protected $allowedFields = ['nombre', 'email'];
 }
-
-// https://www.positronx.io/codeigniter-crud-with-bootstrap-and-mysql-example/
