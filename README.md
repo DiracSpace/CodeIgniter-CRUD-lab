@@ -165,6 +165,19 @@ public $default = [
 ];
 ```
 
+## Configurar las rutas o url
+
+Nos vamos a nuestro archivo `app/Config/Routes.php` y pegamos lo siguiente debajo de `Router Setup`.
+
+```php
+// CRUD operation routing
+
+$routes -> get('delete', 'Operations::delete');
+$routes -> get('edit/(:num)', 'Operations::singleUser/$1');
+$routes -> post('update', 'Operations::update');
+```
+Con esto, podemos aminorar tener que escribir `/operations/update/ID` o url de ese tipo. Ahora, nos disminuye a `/update?id=ID`. 
+
 ## Operaciones CRUD (Create Read Update Delete)
 
 Primero, debemos importar nuestra clase `Usuarios`, para así poder empezar a hacer peticiones a la base de datos. Pondremos lo siguiente al inicio del código en `Operations.php`.
@@ -176,6 +189,12 @@ use App\Models\Usuarios;
 Lo que haremos ahora es crear nuestras operaciones dentro del archivo que creamos `Operations.php`. Lo primero que haremos es editar nuestra función `index()`, ya que la usaremos para poder leer todos los registros de la tabla creada en el paso anterior cada vez que entremos.
 
 ```php
+<?php 
+namespace App\Controllers;
+
+use CodeIgniter\Controller;
+use App\Models\Usuarios;
+
 class Operations extends Controller
 {
     // GET all users
@@ -222,21 +241,189 @@ class Operations extends Controller
             'email' => $this -> request -> getVar('email'),
         ];
         $userModel -> update($id, $data);
-        return $this -> response -> redirect(site_url('/users'));
+        return redirect() -> to(base_url('/operations'));
     }
 
     // DELETE user
-    public function delete($id = null)
+    public function delete()
     {
         $userModel = new Usuarios();
-        $data['usuario'] = $userModel -> where('id', $id) -> delete($id);
-        return $this -> response -> redirect(site_url('/users'));
+        $id = $this -> request -> getVar('id');
+        $userModel -> where('id', $id) -> delete($id);
+        return redirect() -> to(base_url('/operations'));
     }
 }
 ```
 
 ## Crear un nuevo usuario
 
+Ahora, agregaremos el siguiente en nuestro archivo `CrudSite.php` dentro de la carpeta `app/Views`.
+
+`<a href="/operations/register">Registrar usuario</a>`
+
+Esto hará que nuestra etiqueta nos redirija a un archivo `Crear.php` dentro de nuestra carpeta `app/Views`. Aquí generamos una form para poder insertar los datos que mandamos a la base de datos.
+
+```html
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create new user</title>
+</head>
+<body>
+    <p>Create Form</p>
+    <form method="post" action="/operations/create">
+      <div class="form-group">
+        <label>Name</label>
+        <input type="text" name="nombre" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="text" name="email" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <button type="submit">Add User</button>
+      </div>
+    </form>
+</body>
+</html>
+```
+Si nos dirijimos a `http://localhost:8080/operations/register`, nos debería salir lo siguiente:
+
+<p align="center">
+  <img src="lab-evidence/registerform.png" />
+</p>
+
+Lo que hará este sitio, es mandar una petición HTTP usando el método `POST` lo que significa que nuestros datos ingresados pasarán en el body del objeto `$request`.
+
+<p align="center">
+  <img src="lab-evidence/createpayload.png" />
+</p>
+
+Luego, en nuestra función `create()` dentro de nuestra clase `Operations` nos redirije a nuestra url base. Aquí veremos a nuestros registros pero no hemos agregado la lógica para iterar los valores leídos.
+
+## Leer todos los usuarios
+
+¿Se acuerdan de la función `index()`? Pues esta la usaremos para volver a leer la base de datos cada que vayamos a `http://localhost:8080/operations`. 
+
+```php
+// GET all users
+public function index()
+{
+    $userModel = new Usuarios();
+    $data['usuarios'] = $userModel -> orderBy('id') -> findAll();
+    return view('CrudSite', $data);
+}
+```
+Lo que ocurre, es que generamos una nueva instancia de nuestra clase `Usuarios`. Este es nuestro modelo de datos que usamos para formar la información leída. Usamos esta instancia para consultar la base de datos por todos los registros de nuestra tabla `usuarios`, por orden de `id`. Agregamos la información a un array `$data` que pasamos a nuestro `HTML` al retornar la vista.
+
+## Mostrar los usuarios
+
+Ahora que leemos y tenemos un origen de información, podemos iterar el arreglo de objetos generando a su vez etiquetas para mejorar la visibilidad de dicha información.
+
+```php
+<?php foreach ($usuarios as $usuario): ?>
+    <li>
+        <a onclick="editUser(<?php echo $usuario['id']; ?>);">
+            <?php echo $usuario['id']; ?> - <?php echo $usuario['nombre']; ?>
+        </a>
+    </li>
+<?php endforeach; ?>
+```
+Aquí hacemos uso de al renderización dinámica de `CodeIgniter`. Hacemos un ciclo que genera una etiqueta `a` por cada usuario y la `id` la pasamos a una función en `JavaScript` que usaremos para luego.
+
+Con un poco de CSS previamente
+
+```html
+<style type="text/css">
+    ul {
+        list-style-type: none;
+    }
+    .deleteusr {
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+</style>
+```
+
+<p align="center">
+  <img src="lab-evidence/listadeusuarios.png" />
+</p>
+
+Creamos nuestra función en `JavaScript` que nos permitirá redirijir al usuario a nuestro form para editar la información.
+
+```html
+<script type="text/javascript">
+    const editUser = async (id) => {
+        window.location.replace("edit/" + id);
+    }
+</script>
+```
+
+## Editar un usuario
+
+Con la previa función de `JavaScript`, nos redirije a la ruta `http://localhost:8080/edit/ID` en donde el valor `ID` será el número asignado por la base de datos. Creamos un archivo `Edit.php` en la carpeta `app/Views` como los anteriores. Pondremos una form para información nueva.
+
+```html
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit user</title>
+</head>
+<body>
+    <p>Edit Form</p>
+    <form method="post" action="/update">
+        <div class="form-group">
+            <label>ID</label>
+            <input type="text" name="id" value="<?php echo $user_obj['id']; ?>" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" name="nombre" value="<?php echo $user_obj['nombre']; ?>" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>Email</label>
+            <input type="text" name="email" value="<?php echo $user_obj['email']; ?>" class="form-control">
+        </div>
+        <div class="form-group">
+            <button type="submit">Update Data</button>
+        </div>
+    </form>
+</body>
+</html>
+```
+
+Debería terminar viéndose así
+
+<p align="center">
+  <img src="lab-evidence/editform.png" />
+</p>
+
+## Eliminar un usuario
+
+Ahora, para poder eliminar un usuario pues ocuparíamos la `ID`. Sin embargo, en nuestra lista de usuarios ya se muestra eso, por ende podemos agregar una form que pida el ID y haga un `POST` para poder disparar la función que elimina el registro.
+
+```html
+<form class="deleteusr" method="get" action="/delete">
+    <div class="form-group">
+        <label>ID</label>
+        <input type="text" name="id" class="form-control">
+    </div>
+    <div class="form-group">
+        <button type="submit" style="margin-top: 3%;">Delete user</button>
+    </div>
+</form>
+```
+
+Ahora, nuestra página de inicio quedaría así
+
+<p align="center">
+  <img src="lab-evidence/newstart.png" />
+</p>
+
+Con esto ya debería ser todo, de igual forma está el proyecto por si gustan revisarlo.
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)

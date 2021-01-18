@@ -29,7 +29,7 @@
     </form>
     <ul>
     <?php foreach ($usuarios as $usuario): ?>
-        <li><a onclick="deleteUser(<?php echo $usuario['id']; ?>);"><?php echo $usuario['nombre']; ?></a></li>
+        <li><a onclick="deleteUser(<?php echo $usuario['id']; ?>);"><?php echo $usuario['id']; ?> - <?php echo $usuario['nombre']; ?></a></li>
     <?php endforeach; ?>
     </ul>
     <script type="text/javascript">
