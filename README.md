@@ -209,21 +209,6 @@ public function delete($id = null)
 }
 ```
 
-## Definiendo rutas
-
-Ahora, tenemos que definir una serie de rutas que nos permitirán alojar funciones en cierta url. Pondremos lo siguiente en el archivo `app/Config/Routes.php`.
-
-```php
-
-// CRUD operation routing
-
-$routes -> get('users', 'Operations::index');
-$routes -> get('register', 'Operations::register');
-$routes -> post('create', 'Operations::create');
-$routes -> get('edit/(:num)', 'Operations::singleUser/$1');
-$routes -> post('update', 'Operations::update');
-$routes -> get('delete/(:num)', 'Operations::delete/$1');
-```
 ## Crear un nuevo usuario
 
 
