@@ -24,12 +24,14 @@ $routes->setAutoRoute(true);
 
 // CRUD operation routing
 
+/*
 $routes -> get('users', 'Operations::index');
 $routes -> get('register', 'Operations::register');
 $routes -> post('create', 'Operations::create');
 $routes -> get('edit/(:num)', 'Operations::singleUser/$1');
 $routes -> post('update', 'Operations::update');
 $routes -> get('delete/(:num)', 'Operations::delete/$1');
+*/
 
 /**
  * --------------------------------------------------------------------

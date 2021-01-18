@@ -11,7 +11,6 @@ class Operations extends Controller
     {
         $userModel = new Usuarios();
         $data['usuarios'] = $userModel -> orderBy('id') -> findAll();
-        // $allusers = json_encode(array_values($data));
         return view('CrudSite', $data);
     }
 
@@ -30,8 +29,7 @@ class Operations extends Controller
             'email' => $this -> request -> getVar('email'),
         ];
         $userModel -> insert($data);
-        echo "inserted";
-        return $this -> response -> redirect(site_url('operations'));
+        return redirect() -> to(base_url('/operations'));
     }
 
     // GET single user for editing
@@ -52,7 +50,7 @@ class Operations extends Controller
             'email' => $this -> request -> getVar('email'),
         ];
         $userModel -> update($id, $data);
-        return $this -> response -> redirect(site_url('operations'));
+        return $this -> response -> redirect(site_url('/users'));
     }
 
     // DELETE user
@@ -60,6 +58,6 @@ class Operations extends Controller
     {
         $userModel = new Usuarios();
         $data['usuario'] = $userModel -> where('id', $id) -> delete($id);
-        return $this -> response -> redirect(site_url('operations'));
+        return $this -> response -> redirect(site_url('/users'));
     }
 }

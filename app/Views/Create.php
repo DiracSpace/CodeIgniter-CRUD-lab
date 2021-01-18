@@ -6,12 +6,11 @@
 </head>
 <body>
     <p>Create Form</p>
-    <form method="post" action="<?= site_url('/operations/create') ?>">
+    <form method="post" action="/operations/create">
       <div class="form-group">
         <label>Name</label>
-        <input type="text" name="name" class="form-control">
+        <input type="text" name="nombre" class="form-control">
       </div>
-
       <div class="form-group">
         <label>Email</label>
         <input type="text" name="email" class="form-control">
